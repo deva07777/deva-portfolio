@@ -1,5 +1,6 @@
 
 import { Timeline } from "../components/timeline";
+import Image from "next/image";
 
 export const About = () => {
   const data = [
@@ -8,17 +9,20 @@ export const About = () => {
       content: (
         <div>
           <p className="text-sm font-medium md:text-md font-mono mb-8">
-            Decided to make 2025 my year to shine
+            Focused on building production-ready software and AI systems.
           </p>
           <div className="mb-8 font-medium">
             <div className="flex items-center text-sm md:text-md font-mono">
-              Latest update:
+              Highlights:
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              💼 Landed an internship as a Software Developer @ FPT Australasia
+              🏆 Winner of multiple technical and hackathon events
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              🎓 Expecting my graduation soon!
+              🤖 Built ML, data science, and AI-driven applications
+            </div>
+            <div className="flex items-center text-sm md:text-md font-mono">
+              📊 Strong focus on real-world problem solving and real-world applications
             </div>
           </div>
         </div>
@@ -29,26 +33,20 @@ export const About = () => {
       content: (
         <div>
           <p className="text-sm font-medium md:text-md font-mono mb-8">
-            Dove deep into my Computing and Software Systems degree at UniMelb
+            Explored software engineering, machine learning, and data science deeply.
           </p>
           <div className="mb-8 font-medium">
             <div className="flex items-center text-sm md:text-md font-mono">
-              My key takeaways:
+              Highlights:
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              🔐 Learned that released datasets usually have some noise to
-              protect privacy through COMP20008
+              🧠 Built ML models using Python and Scikit-learn
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              🧮 Refined my data structures and algorithms through COMP20003 and
-              Leetcode questions
+              📈 Worked on data-driven predictive systems
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              ⚖️ Balanced my academic responsibilities with other life
-              commitments
-            </div>
-            <div className="flex items-center text-sm md:text-md font-mono pt-2">
-              ... and many more!
+              🛠️ Developed full-stack and backend software projects
             </div>
           </div>
         </div>
@@ -59,18 +57,17 @@ export const About = () => {
       content: (
         <div>
           <p className="text-sm font-medium md:text-md font-mono mb-8">
-            Started my adulthood at The University of Melbourne
+            Started my programming journey.
           </p>
           <div className="mb-8 font-medium">
             <div className="flex items-center text-sm md:text-md font-mono">
-              At a glance:
+              Highlights:
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              👨🏻‍💻 Wrote my first line of code in Python and C
+              🐍 Python as primary language
             </div>
             <div className="flex items-center text-sm md:text-md font-mono">
-              🍕 Somehow know how to make 150+ pizza doughs in 1 hour (Thanks,
-              Dominos)
+              📚 Strong foundations in algorithms, mathematics and statistics
             </div>
           </div>
         </div>
@@ -84,6 +81,16 @@ export const About = () => {
         <h2 className="font-semibold text-lg font-mono text-[#FF611D]">
           CODE.EAT.SLEEP.REPEAT
         </h2>
+        <div className="relative mt-8 mb-8">
+          <Image
+            src="/profile.jpg"
+            alt="Devadhatthan L profile picture"
+            width={300}
+            height={300}
+            className="rounded-full object-cover object-center w-40 h-40 md:w-60 md:h-60"
+            priority
+          />
+        </div>
         <Timeline data={data} />
       </div>
     </div>

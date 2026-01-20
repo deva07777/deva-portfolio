@@ -24,13 +24,14 @@ export const Header = () => {
     <section>
       {/* Full-width header that shows initially */}
       <div
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "opacity-0 -translate-y-full" : "opacity-100"
-        } hidden md:block`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "opacity-0 -translate-y-full" : "opacity-100"
+          } hidden md:block`}
       >
         <div className="w-full px-4 md:px-16 py-4 backdrop-blur-sm flex justify-between items-center">
-          <Link href="/">
-            <Image src="/logo.svg" alt="Logo" width={100} height={100} />
+          <Link href="/" className="no-underline">
+            <span className="font-mono text-xl md:text-2xl font-bold text-[#D6D2BD]">
+              devadhatthan<span className="text-[#FF611D]">.l</span>
+            </span>
           </Link>
           <nav className="hidden md:flex gap-8">
             <Link href="/about" className="nav-item">
@@ -48,9 +49,8 @@ export const Header = () => {
 
       {/* Centered rounded nav that shows after scrolling */}
       <div
-        className={`flex justify-center items-center fixed top-3 w-full z-50 transition-all duration-300 ${
-          scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        } hidden md:flex`}
+        className={`flex justify-center items-center fixed top-3 w-full z-50 transition-all duration-300 ${scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          } hidden md:flex`}
       >
         <div className="backdrop-blur rounded-full">
           <AnimatedContent
@@ -63,9 +63,11 @@ export const Header = () => {
             scale={1.1}
             threshold={0.2}
           >
-            <nav className="flex gap-1 p-1 rounded-full bg-white/20 text-[#D6D2BD]">
-              <Link href="/" className="nav-item">
-                <Image src="/logo2.svg" alt="Logo" width={60} height={20} />
+            <nav className="flex gap-1 p-1 rounded-full bg-white/20 text-[#D6D2BD] items-center">
+              <Link href="/" className="nav-item flex items-center px-4">
+                <span className="font-mono text-lg font-bold text-[#D6D2BD]">
+                  devadhatthan<span className="text-[#FF611D]">.l</span>
+                </span>
               </Link>
               <Link href="/about" className="nav-item">
                 About
@@ -82,25 +84,19 @@ export const Header = () => {
       </div>
 
       <div
-        className={`fixed top-0 w-full z-50 flex justify-center items-center md:hidden transition-all duration-300 ${
-          scrolled ? "opacity-0 -translate-y-full" : "opacity-100"
-        }`}
+        className={`fixed top-0 w-full z-50 flex justify-center items-center md:hidden transition-all duration-300 ${scrolled ? "opacity-0 -translate-y-full" : "opacity-100"
+          }`}
       >
-        <Link href="/" className="z-50">
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            width={60}
-            height={20}
-            className="py-4"
-          />
+        <Link href="/" className="z-50 py-4 no-underline">
+          <span className="font-mono text-xl font-bold text-[#D6D2BD]">
+            devadhatthan<span className="text-[#FF611D]">.l</span>
+          </span>
         </Link>
       </div>
 
       <div
-        className={`fixed top-3 w-full z-50 flex justify-center items-center md:hidden transition-all duration-300 ${
-          scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        }`}
+        className={`fixed top-3 w-full z-50 flex justify-center items-center md:hidden transition-all duration-300 ${scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          }`}
       >
         <div className="backdrop-blur rounded-full">
           <AnimatedContent
@@ -113,9 +109,11 @@ export const Header = () => {
             scale={1.1}
             threshold={0.2}
           >
-            <nav className="flex gap-1 p-1 rounded-full bg-white/20 text-[#D6D2BD]">
-              <Link href="/" className="nav-item z-50">
-                <Image src="/logo2.svg" alt="Logo" width={60} height={20} />
+            <nav className="flex gap-1 p-1 rounded-full bg-white/20 text-[#D6D2BD] items-center">
+              <Link href="/" className="nav-item z-50 flex items-center px-2">
+                <span className="font-mono text-sm font-bold text-[#D6D2BD]">
+                  devadhatthan<span className="text-[#FF611D]">.l</span>
+                </span>
               </Link>
               <Link href="/about" className="nav-item">
                 About

@@ -10,9 +10,9 @@ import Squares from "../components/squares";
 export const Hero = () => {
   const jsonData = {
     about_me: {
-      name: "Long Nguyen",
-      "career-in-progress": "Software Development",
-      "current-career-focus": "Fullstack Web Developer",
+      name: "Devadhatthan L",
+      "career-in-progress": "Software, Machine Learning & Data Science",
+      "current-career-focus": "AI / ML Engineer",
     },
   };
 
@@ -68,6 +68,10 @@ export const Hero = () => {
                 "こんにちは!",
                 "안녕하세요!",
                 "Xin chào!",
+                "வணக்கம்",
+                "नमस्ते",
+                "ഹലോ",
+
               ]}
               mainClassName="text-5xl md:text-6xl lg:text-6xl font-semibold text-[#FF611D] py-10 font-sans"
               staggerFrom={"random"}

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import AnimatedContent from "../components/animatedcontent";
 import GitHubCalendar from "react-github-calendar";
+import LeetCodeCalendar from "../components/LeetCodeCalendar";
 
 const AboutPage = () => {
   return (
@@ -19,7 +20,9 @@ const AboutPage = () => {
             threshold={0.2}
           >
             {/* Main Content */}
-            <h1 className="text-5xl font-bold mb-12">Hi, I'm Long!</h1>
+            <h1 className="text-5xl font-bold mb-12">
+              Hi, I&apos;m Deva!
+            </h1>
           </AnimatedContent>
 
           {/* Image section - shows at top on sm and md screens */}
@@ -36,14 +39,12 @@ const AboutPage = () => {
             <div className="block lg:hidden mb-8">
               <div className="flex justify-center">
                 <div className="relative w-60 h-60 md:w-80 md:h-80">
-                  <div className="overflow-hidden rounded-full w-full h-full">
+                  <div className="overflow-hidden rounded-full w-full h-full relative">
                     <Image
-                      src="/profile.jpg"
-                      alt="Long's profile pic"
-                      layout="fill"
-                      objectFit="cover"
-                      objectPosition="center"
-                      className="rounded-full"
+                      src="/profile.png"
+                      alt="Deva L profile picture"
+                      fill
+                      className="rounded-full object-cover object-center"
                     />
                   </div>
                 </div>
@@ -52,7 +53,7 @@ const AboutPage = () => {
           </AnimatedContent>
 
           <div className="flex flex-col lg:flex-row lg:justify-between gap-16 mb-16">
-            {/* Text section - fills available space but not more than needed */}
+            {/* Text section */}
             <AnimatedContent
               distance={10}
               direction="horizontal"
@@ -66,37 +67,52 @@ const AboutPage = () => {
               <div className="lg:max-w-4xl">
                 <div className="mb-8">
                   <h2 className="text-2xl font-medium mb-4">
-                    An emerging{" "}
-                    <span className="text-[#FF611D]">software engineer</span>{" "}
-                    with a passion to{" "}
-                    <span className="text-[#FF611D]">learn</span> and a{" "}
-                    <span className="text-[#FF611D]">can-do attitude</span>.
+                    A{" "}
+                    <span className="text-[#FF611D]">
+                      systems-focused engineer
+                    </span>{" "}
+                    working at the intersection of{" "}
+                    <span className="text-[#FF611D]">software</span>,{" "}
+                    <span className="text-[#FF611D]">
+                      machine learning
+                    </span>{" "}
+                    and{" "}
+                    <span className="text-[#FF611D]">data</span>.
                   </h2>
                   <p className="mb-8">
-                    I am driven by{" "}
-                    <span className="text-[#FF611D]">curiosity</span> and a
-                    commitment to building impactful software solutions. I
-                    thrive on tackling complex problems and finding efficient
-                    ways to address them, continuously seeking opportunities to
-                    improve my skills.
+                    I am driven by a strong interest in building{" "}
+                    <span className="text-[#FF611D]">intelligent</span>,{" "}
+                    <span className="text-[#FF611D]">reliable</span> systems that
+                    solve real-world problems. My work spans software
+                    engineering, machine learning, and data-driven applications,
+                    with a focus on robust system design and performance.
                   </p>
                 </div>
 
                 <p className="mb-4">
-                  During my time at{" "}
+                  I have hands-on experience designing{" "}
+                  <span className="text-[#FF611D]">ML-powered systems</span>,{" "}
                   <span className="text-[#FF611D]">
-                    University of Melbourne
+                    privacy-preserving models
                   </span>
-                  , I have had hands-on experience in various technical areas. I
-                  enjoy working on diverse projects that require both{" "}
-                  <span className="text-[#FF611D]">creativity</span> and{" "}
-                  <span className="text-[#FF611D]">technical expertise</span>.
+                  , and{" "}
+                  <span className="text-[#FF611D]">
+                    context-aware recommendation engines
+                  </span>
+                  . I enjoy working on problems that require both algorithmic
+                  reasoning and practical engineering trade-offs.
                 </p>
+
                 <p>
-                  I am always eager to embrace new challenges and am dedicated
-                  to creating meaningful digital experiences that have a
-                  positive impact. My passion for learning and growth fuels my
-                  drive to excel in the software engineering field.
+                  I am particularly interested in building{" "}
+                  <span className="text-[#FF611D]">scalable</span>,{" "}
+                  <span className="text-[#FF611D]">explainable</span>, and{" "}
+                  <span className="text-[#FF611D]">
+                    production-ready AI systems
+                  </span>
+                  . Whether it&apos;s architecting agentic pipelines, optimizing
+                  inference latency, or designing clean APIs, I focus on
+                  clarity, correctness, and long-term maintainability.
                 </p>
 
                 <div className="mb-8"></div>
@@ -117,14 +133,12 @@ const AboutPage = () => {
               <div className="hidden lg:block">
                 <div className="flex justify-end">
                   <div className="relative w-60 h-60 md:w-80 md:h-80">
-                    <div className="overflow-hidden rounded-full w-full h-full">
+                    <div className="overflow-hidden rounded-full w-full h-full relative">
                       <Image
                         src="/profile.jpg"
-                        alt="Long's profile pic"
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="center"
-                        className="rounded-full"
+                        alt="Devadhatthan L profile picture"
+                        fill
+                        className="rounded-full object-cover object-center"
                       />
                     </div>
                   </div>
@@ -134,13 +148,15 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+
+      {/* GitHub Contributions */}
       <div className="container mx-auto px-10 md:px-16 lg:px-0 pb-12">
         <div className="text-center mb-4 text-xl font-semibold">
           My GitHub contributions
         </div>
         <div className="flex justify-center">
           <GitHubCalendar
-            username="thanhlongnguyenn"
+            username="deva07777"
             theme={{
               dark: ["#333333", "#FF611D"],
             }}
@@ -148,6 +164,16 @@ const AboutPage = () => {
               font: "14px JetBrains Mono",
             }}
           />
+        </div>
+      </div>
+
+      {/* LeetCode Contributions */}
+      <div className="container mx-auto px-10 md:px-16 lg:px-0 pb-12">
+        <div className="text-center mb-4 text-xl font-semibold">
+          My LeetCode submissions
+        </div>
+        <div className="flex justify-center">
+          <LeetCodeCalendar username="Deva__07" />
         </div>
       </div>
     </div>

@@ -16,8 +16,8 @@ const jetBrainMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Long Nguyen",
-  description: "Long Nguyen's portfolio",
+  title: "Devadhatthan L",
+  description: "Devadhatthan L's portfolio",
 };
 
 export default function RootLayout({
@@ -28,22 +28,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Long Nguyen</title>
-        <meta name="description" content="Long Nguyen's portfolio" />
+        <title>Devadhatthan L</title>
+        <meta name="description" content="Devadhatthan L's portfolio" />
 
         {/* Facebook Meta Tags */}
         <meta property='og:url' content='https://thanhlongnguyen.vercel.app/' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='Long Nguyen' />
-        <meta property='og:description' content="Long Nguyen's portfolio" />
+        <meta property='og:title' content='Devadhatthan L' />
+        <meta property='og:description' content="Devadhatthan L's portfolio" />
         <meta property='og:image' content='https://opengraph.b-cdn.net/production/images/9bd18980-2bde-4db0-8f61-8ec598aff2b6.png?token=_qTLRn6p4KnE4V7PrsKivjz0GDQRC5w3_ivOT_p9HSw&height=714&width=1200&expires=33278371349' />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="thanhlongnguyen.vercel.app" />
         <meta property="twitter:url" content="https://thanhlongnguyen.vercel.app/" />
-        <meta name="twitter:title" content="Long Nguyen" />
-        <meta name="twitter:description" content="Long Nguyen's portfolio" />
+        <meta name="twitter:title" content="Devadhatthan L" />
+        <meta name="twitter:description" content="Devadhatthan L's portfolio" />
         <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/9bd18980-2bde-4db0-8f61-8ec598aff2b6.png?token=_qTLRn6p4KnE4V7PrsKivjz0GDQRC5w3_ivOT_p9HSw&height=714&width=1200&expires=33278371349" />
       </head>
       <body className={twMerge(inter.variable, jetBrainMono.variable, "bg-[#333333] text-[#D6D2BD] font-sans antialiased")}>

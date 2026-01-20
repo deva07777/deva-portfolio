@@ -7,34 +7,18 @@ const ContactPage = () => {
   const contactLinks = [
     {
       name: "LinkedIn",
-      link: "https://www.linkedin.com/in/longthanhnguyen2004/",
+      link: "https://www.linkedin.com/in/deva-aiml",
       description: "Connect with me professionally",
     },
     {
       name: "GitHub",
-      link: "https://github.com/thanhlongnguyenn",
+      link: "https://github.com/deva07777",
       description: "Check out my code repositories",
     },
     {
       name: "Email",
-      link: "mailto:tln.thanhlongnguyen@gmail.com?subject=Hello%20Long!%20I%20am%20a%20visitor%20from%20your%20portfolio",
+      link: "mailto:devaseven104@gmail.com?subject=Hello%20Long!%20I%20am%20a%20visitor%20from%20your%20portfolio",
       description: "Let's talk business",
-    },
-  ];
-
-  // Social media share links
-  const shareLinks = [
-    {
-      name: "Facebook",
-      link: "https://www.facebook.com/sharer/sharer.php?u=https://thanhlongnguyen.vercel.app/",
-    },
-    {
-      name: "Twitter",
-      link: "https://twitter.com/intent/tweet?url=https://thanhlongnguyen.vercel.app/&text=Check%20out%20this%20amazing%20portfolio!",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/shareArticle?mini=true&url=https://thanhlongnguyen.vercel.app/&title=Check%20out%20this%20amazing%20portfolio!",
     },
   ];
 
@@ -103,28 +87,7 @@ const ContactPage = () => {
           ))}
         </div>
 
-        {/* Spread the Word Section */}
-        <div className="w-full max-w-2xl px-4 mt-20 flex flex-col items-center justify-center">
-          <h1 className="font-bold text-[30px]">SPREAD THE WORD!</h1>
-          <h2 className="font-semibold text-lg font-mono text-[#FF611D] flex items-center mb-12">
-            INTERESTED? SHARE MY PORTFOLIO!
-          </h2>
-          <div className="flex flex-row space-x-4 text-[#D6D2BD]">
-            {shareLinks.map((share, index) => (
-              <a
-                key={index}
-                href={share.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group font-mono transition-colors duration-300"
-              >
-                <div className="group-hover:text-[#FF611D] text-[#D6D2BD] p-2 rounded transition-colors duration-300">
-                  {share.name}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+
       </div>
     </div>
   );

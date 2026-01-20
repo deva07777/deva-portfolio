@@ -5,8 +5,8 @@ export default function TechStack() {
     <div className="pt-10 md:pt-15">
       <ScrollVelocity
         texts={[
-          "<Python> <Java> <C> <SQL>",
-          "[AI/ML] [Web Development] [UI/UX] [Data Analysis] [Data Visualisation]",
+          "<Python> <Software Engineering> <Machine Learning> <Data Science> <AI>",
+          "[Software] [Machine Learning] [Data Science] [AI Systems] [Problem Solving] [Data Analysis] [Data Visualization] [Cybersecurity]",
         ]}
         velocity={80}
         parallaxClassName="parallax"
