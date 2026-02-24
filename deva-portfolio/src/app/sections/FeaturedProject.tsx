@@ -230,6 +230,24 @@ const Project5Content = () => {
         An embedding-based recommendation system optimized using user interaction signals to improve engagement.
       </p>
 
+      <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-black border border-white/10 group">
+        {/* Placeholder for video - User needs to replace src */}
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+          <p className="text-gray-500 font-mono">Demo Video Placeholder</p>
+        </div>
+        {/* Uncomment and use this when you have the video file */}
+        {/* 
+         <video 
+            src="/videos/cinimatch-demo.mp4" 
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
+            muted
+            loop
+         /> 
+         */}
+      </div>
+
       <h3 className="text-2xl font-bold mb-4 text-[#FF611D]">CINIMATCH – AI-POWERED RECOMMENDATION PROTOTYPE (2024)</h3>
       <p className="mb-4">
         A personalized recommendation system leveraging embeddings and similarity-based ranking.
@@ -406,6 +424,7 @@ const data = [
     title: "CiniMatch – AI-Powered Recommendation Prototype",
     src: "/sorting1.jpeg", // Reusing image
     content: <Project5Content />,
+    link: "https://cinimatch.vercel.app/",
   },
   {
     category: "Python, Machine Learning, Sports Analytics, Scikit-learn",

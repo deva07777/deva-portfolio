@@ -3,6 +3,16 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
 
+const backgroundColors = [
+  "#333333", // base color
+  "#2e2e2e", // slightly darker
+  "#292929", // slightly darker
+  "#242424", // slightly darker
+  "#1f1f1f", // slightly darker
+  "#1a1a1a", // slightly darker
+  "#151515", // slightly darker
+];
+
 export const StickyScroll = ({
   content,
   contentClassName,
@@ -48,15 +58,7 @@ export const StickyScroll = ({
     };
   }, [content]);
 
-  const backgroundColors = [
-    "#333333", // base color
-    "#2e2e2e", // slightly darker
-    "#292929", // slightly darker
-    "#242424", // slightly darker
-    "#1f1f1f", // slightly darker
-    "#1a1a1a", // slightly darker
-    "#151515", // slightly darker
-  ];
+
 
   useEffect(() => {
     document.body.style.transition = "background-color 0.5s ease";

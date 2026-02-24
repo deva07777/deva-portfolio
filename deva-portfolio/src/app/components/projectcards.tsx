@@ -24,6 +24,7 @@ type Card = {
   src: string;
   title: string;
   category: string;
+  link?: string;
   content: React.ReactNode;
 };
 
@@ -31,7 +32,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -105,7 +106,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4 md:pl-16",
-              "mx-auto relative" 
+              "mx-auto relative"
             )}
           >
             {items.map((item, index) => (
@@ -244,9 +245,11 @@ export const Card = ({
                 card.title !== "HMU_2PDF" && (
                   <div className="flex justify-end">
                     <a
-                      href={`/my-projects/${card.title
+                      href={card.link || `/my-projects/${card.title
                         .toLowerCase()
                         .replace(/\s+/g, "-")}`}
+                      target={card.link ? "_blank" : "_self"}
+                      rel={card.link ? "noopener noreferrer" : ""}
                       className="mt-4 inline-block bg-[#FF611D] py-2 px-4 rounded-3xl items-center justify-center float-right transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#FF4500]"
                     >
                       View Project

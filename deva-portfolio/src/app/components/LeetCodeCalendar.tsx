@@ -5,46 +5,57 @@ import { ActivityCalendar } from "react-activity-calendar";
 
 const LeetCodeCalendar = ({ username }: { username: string }) => {
     const [data, setData] = useState<Array<{ date: string; count: number; level: number }>>([]);
+    const [stats, setStats] = useState<{ totalSolved: number; ranking: number; acceptanceRate: number } | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
-                const json = await response.json();
+                // Fetch stats (solved, ranking)
+                const statsResponse = await fetch(`https://alfa-leetcode-api.onrender.com/userProfile/${username}`);
+                const statsJson = await statsResponse.json();
 
-                if (json.status === "error") {
-                    console.error("Error fetching LeetCode data:", json.message);
-                    setLoading(false);
-                    return;
+                // Fetch calendar data
+                const calResponse = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/calendar`);
+                const calJson = await calResponse.json();
+
+                if (statsJson) {
+                    setStats({
+                        totalSolved: statsJson.totalSolved || 0,
+                        ranking: statsJson.ranking || statsJson.matchedUserStats?.ranking || 0,
+                        acceptanceRate: statsJson.acceptanceRate || 0,
+                    });
                 }
 
-                const submissionCalendar = json.submissionCalendar; // Unix timestamp -> count
+                let submissionCalendar = calJson.submissionCalendar;
+
+                if (typeof submissionCalendar === 'string') {
+                    submissionCalendar = JSON.parse(submissionCalendar);
+                }
+
                 const formattedData: Array<{ date: string; count: number; level: number }> = [];
 
-                // Helper to formatting dates as YYYY-MM-DD
                 const formatDate = (date: Date) => {
                     return date.toISOString().split('T')[0];
                 };
 
-                // Create a map of existing data
                 const submissionMap = new Map<string, number>();
-                Object.keys(submissionCalendar).forEach((timestamp) => {
-                    const date = new Date(parseInt(timestamp) * 1000);
-                    const dateString = formatDate(date);
-                    submissionMap.set(dateString, submissionCalendar[timestamp]);
-                });
+                if (submissionCalendar) {
+                    Object.keys(submissionCalendar).forEach((timestamp) => {
+                        const date = new Date(parseInt(timestamp) * 1000);
+                        const dateString = formatDate(date);
+                        submissionMap.set(dateString, submissionCalendar[timestamp]);
+                    });
+                }
 
-                // Generate data for the last year (similar to GitHub calendar default)
                 const today = new Date();
                 const oneYearAgo = new Date();
                 oneYearAgo.setFullYear(today.getFullYear() - 1);
 
-                for (let d = oneYearAgo; d <= today; d.setDate(d.getDate() + 1)) {
+                for (let d = new Date(oneYearAgo); d <= today; d.setDate(d.getDate() + 1)) {
                     const dateString = formatDate(d);
                     const count = submissionMap.get(dateString) || 0;
 
-                    // Determine level (0-4) based on count, rough approximation
                     let level = 0;
                     if (count > 0) level = 1;
                     if (count > 2) level = 2;
@@ -78,34 +89,55 @@ const LeetCodeCalendar = ({ username }: { username: string }) => {
     }
 
     return (
-        <ActivityCalendar
-            data={data}
-            theme={{
-                dark: ["#333333", "#FF611D"],
-                light: ["#ebedf0", "#FF611D"],
-            }}
-            colorScheme="dark"
-            blockSize={12}
-            blockMargin={5}
-            fontSize={14}
-            style={{
-                fontFamily: '"JetBrains Mono", monospace',
-            }}
-            labels={{
-                legend: {
-                    less: 'Less',
-                    more: 'More',
-                },
-                months: [
-                    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-                ],
-                weekdays: [
-                    'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
-                ],
-                totalCount: '{{count}} submissions in the last year'
-            }}
-        />
+        <div className="flex flex-col items-center gap-6 w-full">
+            {stats && (
+                <div className="flex flex-wrap justify-center gap-4 md:gap-8 w-full">
+                    <div className="bg-[#1a1a1a] border border-white/5 px-6 py-3 rounded-xl flex flex-col items-center min-w-[120px]">
+                        <span className="text-2xl font-bold text-white">{stats.totalSolved}</span>
+                        <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Total Solved</span>
+                    </div>
+                    <div className="bg-[#1a1a1a] border border-white/5 px-6 py-3 rounded-xl flex flex-col items-center min-w-[120px]">
+                        <span className="text-2xl font-bold text-white">{stats.ranking.toLocaleString()}</span>
+                        <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Ranking</span>
+                    </div>
+                    <div className="bg-[#1a1a1a] border border-white/5 px-6 py-3 rounded-xl flex flex-col items-center min-w-[120px]">
+                        <span className="text-2xl font-bold text-white">{stats.acceptanceRate}%</span>
+                        <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Acceptance</span>
+                    </div>
+                </div>
+            )}
+
+            <div className="w-full overflow-x-auto flex justify-center">
+                <ActivityCalendar
+                    data={data}
+                    theme={{
+                        dark: ["#333333", "#FF611D"],
+                        light: ["#ebedf0", "#FF611D"],
+                    }}
+                    colorScheme="dark"
+                    blockSize={12}
+                    blockMargin={5}
+                    fontSize={14}
+                    style={{
+                        fontFamily: '"JetBrains Mono", monospace',
+                    }}
+                    labels={{
+                        legend: {
+                            less: 'Less',
+                            more: 'More',
+                        },
+                        months: [
+                            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                        ],
+                        weekdays: [
+                            'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
+                        ],
+                        totalCount: '{{count}} submissions in the last year'
+                    }}
+                />
+            </div>
+        </div>
     );
 };
 

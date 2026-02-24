@@ -133,6 +133,33 @@ export const Hero = () => {
           <AnimatedContent
             distance={200}
             direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 13 }}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+            delay={1000}
+          >
+            <div className="mt-8">
+              <a
+                href="/resume.pdf"
+                download="Devadhatthan_L_Resume.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FF611D] text-white font-medium hover:bg-[#ff7b42] transition-colors duration-300 shadow-lg hover:shadow-orange-500/20"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Resume
+              </a>
+            </div>
+          </AnimatedContent>
+
+          <AnimatedContent
+            distance={200}
+            direction="vertical"
             reverse={true}
             config={{ tension: 70, friction: 13 }}
             initialOpacity={0}

@@ -3,6 +3,10 @@ import Image from "next/image";
 import AnimatedContent from "../components/animatedcontent";
 import GitHubCalendar from "react-github-calendar";
 import LeetCodeCalendar from "../components/LeetCodeCalendar";
+import { Achievements } from "../components/Achievements";
+import { TechnicalSkills } from "../components/TechnicalSkills";
+import { Education } from "../components/Education";
+import { Extracurriculars } from "../components/Extracurriculars";
 
 const AboutPage = () => {
   return (
@@ -135,7 +139,7 @@ const AboutPage = () => {
                   <div className="relative w-60 h-60 md:w-80 md:h-80">
                     <div className="overflow-hidden rounded-full w-full h-full relative">
                       <Image
-                        src="/profile.jpg"
+                        src="/profile.png"
                         alt="Devadhatthan L profile picture"
                         fill
                         className="rounded-full object-cover object-center"
@@ -146,6 +150,34 @@ const AboutPage = () => {
               </div>
             </AnimatedContent>
           </div>
+
+          {/* Education Section */}
+          <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 13 }}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.1}
+            threshold={0.1}
+          >
+            <Education />
+          </AnimatedContent>
+
+          {/* Technical Skills Section */}
+          <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 13 }}
+            initialOpacity={0}
+            animateOpacity
+            scale={1.1}
+            threshold={0.1}
+          >
+            <TechnicalSkills />
+          </AnimatedContent>
         </div>
       </div>
 
@@ -176,6 +208,23 @@ const AboutPage = () => {
           <LeetCodeCalendar username="Deva__07" />
         </div>
       </div>
+
+      {/* Achievements & Certifications */}
+      <Achievements />
+
+      {/* Extracurricular Activities */}
+      <AnimatedContent
+        distance={20}
+        direction="vertical"
+        reverse={false}
+        config={{ tension: 70, friction: 13 }}
+        initialOpacity={0}
+        animateOpacity
+        scale={1.1}
+        threshold={0.1}
+      >
+        <Extracurriculars />
+      </AnimatedContent>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import { Timeline } from "../components/timeline";
 import Image from "next/image";
 
@@ -9,20 +8,21 @@ export const About = () => {
       content: (
         <div>
           <p className="text-sm font-medium md:text-md font-mono mb-8">
-            Focused on building production-ready software and AI systems.
+            Currently building reliable, production-ready software and AI systems
+            with an emphasis on clarity, performance, and real-world usability.
           </p>
-          <div className="mb-8 font-medium">
-            <div className="flex items-center text-sm md:text-md font-mono">
-              Highlights:
+          <div className="mb-8 font-medium space-y-3">
+            <div className="text-sm md:text-md font-mono">
+              🏆 Led and contributed to winning technical and hackathon projects by delivering complete, working solutions
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              🏆 Winner of multiple technical and hackathon events
+            <div className="text-sm md:text-md font-mono">
+              🤖 Built machine learning and AI-driven applications beyond experimentation, focusing on practical implementation
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              🤖 Built ML, data science, and AI-driven applications
+            <div className="text-sm md:text-md font-mono">
+              📊 Prioritized solving real-world problems over building surface-level demos
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              📊 Strong focus on real-world problem solving and real-world applications
+            <div className="text-sm md:text-md font-mono">
+              ⚙️ Strengthened understanding of system design, scalability, and clean architecture
             </div>
           </div>
         </div>
@@ -33,20 +33,21 @@ export const About = () => {
       content: (
         <div>
           <p className="text-sm font-medium md:text-md font-mono mb-8">
-            Explored software engineering, machine learning, and data science deeply.
+            Strengthened foundations in software engineering, machine learning,
+            and data systems through consistent project building.
           </p>
-          <div className="mb-8 font-medium">
-            <div className="flex items-center text-sm md:text-md font-mono">
-              Highlights:
+          <div className="mb-8 font-medium space-y-3">
+            <div className="text-sm md:text-md font-mono">
+              🧠 Implemented ML models using Python and Scikit-learn with focus on evaluation and validation
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              🧠 Built ML models using Python and Scikit-learn
+            <div className="text-sm md:text-md font-mono">
+              📈 Developed predictive systems using structured data and statistical techniques
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              📈 Worked on data-driven predictive systems
+            <div className="text-sm md:text-md font-mono">
+              🛠️ Built backend and full-stack applications integrating APIs and databases
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              🛠️ Developed full-stack and backend software projects
+            <div className="text-sm md:text-md font-mono">
+              🔍 Improved problem-solving skills through algorithms and data structures practice
             </div>
           </div>
         </div>
@@ -57,23 +58,25 @@ export const About = () => {
       content: (
         <div>
           <p className="text-sm font-medium md:text-md font-mono mb-8">
-            Started my programming journey.
+            Began learning programming with a focus on computational thinking
+            and structured problem solving.
           </p>
-          <div className="mb-8 font-medium">
-            <div className="flex items-center text-sm md:text-md font-mono">
-              Highlights:
+          <div className="mb-8 font-medium space-y-3">
+            <div className="text-sm md:text-md font-mono">
+              🐍 Adopted Python as primary language and built foundational projects
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              🐍 Python as primary language
+            <div className="text-sm md:text-md font-mono">
+              📚 Developed strong fundamentals in algorithms, mathematics, and statistics
             </div>
-            <div className="flex items-center text-sm md:text-md font-mono">
-              📚 Strong foundations in algorithms, mathematics and statistics
+            <div className="text-sm md:text-md font-mono">
+              💡 Built consistency through daily coding and structured learning
             </div>
           </div>
         </div>
       ),
     },
   ];
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center pt-24 lg:pt-34">
@@ -81,9 +84,10 @@ export const About = () => {
         <h2 className="font-semibold text-lg font-mono text-[#FF611D]">
           CODE.EAT.SLEEP.REPEAT
         </h2>
+
         <div className="relative mt-8 mb-8">
           <Image
-            src="/profile.jpg"
+            src="/profile.png"
             alt="Devadhatthan L profile picture"
             width={300}
             height={300}
@@ -91,6 +95,7 @@ export const About = () => {
             priority
           />
         </div>
+
         <Timeline data={data} />
       </div>
     </div>
