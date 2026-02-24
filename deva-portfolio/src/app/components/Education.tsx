@@ -1,5 +1,4 @@
 import React from "react";
-import { cn } from "../lib/utils";
 import { IconSchool, IconCalendar, IconChartBar } from "@tabler/icons-react";
 
 export const Education = () => {
