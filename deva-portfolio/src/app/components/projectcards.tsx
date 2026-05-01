@@ -241,21 +241,18 @@ export const Card = ({
                 {card.title}
               </motion.p>
               <div className="py-10">{card.content}</div>
-              {card.title !== "RAG-AI Personal Assistant" &&
-                card.title !== "HMU_2PDF" && (
+              {card.link && (
                   <div className="flex justify-end">
                     <a
-                      href={card.link || `/my-projects/${card.title
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`}
-                      target={card.link ? "_blank" : "_self"}
-                      rel={card.link ? "noopener noreferrer" : ""}
-                      className="mt-4 inline-block bg-[#FF611D] py-2 px-4 rounded-3xl items-center justify-center float-right transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#FF4500]"
+                      href={card.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block bg-[#FF611D] text-black font-bold py-2 px-6 rounded-3xl items-center justify-center float-right transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#FF4500]"
                     >
-                      View Project
+                      View Live Project
                     </a>
                   </div>
-                )}
+              )}
             </motion.div>
           </div>
         )}
