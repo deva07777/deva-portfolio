@@ -44,7 +44,7 @@ export const Education = () => {
                                 </div>
                                 <div className="flex items-center gap-3 text-gray-400 font-mono text-sm bg-white/5 p-4 rounded-2xl border border-white/5">
                                     <IconChartBar className="text-[#FF611D]" size={20} />
-                                    <span>CGPA: <span className="text-white font-bold text-lg ml-1">7.505</span></span>
+                                    <span>CGPA: <span className="text-white font-bold text-lg ml-1">7.62</span></span>
                                 </div>
                             </div>
                         </div>
